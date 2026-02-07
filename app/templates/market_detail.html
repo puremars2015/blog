@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}{{ market.question }} — Wonderland{% endblock %}
+
+{% block content %}
+  <div class="page-header">
+    <div class="container">
+      <h1 style="font-size:2.1rem">{{ market.question }}</h1>
+      <p>{{ market.category }} · Ends {{ market.ends_at }} · Vol ${{ "{:,}".format(market.volume) }}</p>
+    </div>
+  </div>
+
+  <div class="container" style="margin: 26px auto 70px;">
+    <div class="card" style="grid-column:1/-1;">
+      <div class="meta">Demo market (fake data). Next: connect to DB + real trading UI.</div>
+
+      <div class="pair" style="margin-top:16px;">
+        <div class="side">
+          <div class="side-label">YES <span class="pct">{{ (market.yes*100)|round(0)|int }}%</span></div>
+          <div class="bar"><div class="fill yes" style="width: {{ (market.yes*100)|round(2) }}%"></div></div>
+        </div>
+        <div class="side">
+          <div class="side-label">NO <span class="pct">{{ (market.no*100)|round(0)|int }}%</span></div>
+          <div class="bar"><div class="fill no" style="width: {{ (market.no*100)|round(2) }}%"></div></div>
+        </div>
+      </div>
+
+      <div style="margin-top:16px; color:var(--muted); line-height:1.7">
+        <div><strong>Resolution criteria (demo):</strong> {{ market.resolution }}</div>
+        <div style="margin-top:10px"><strong>Notes:</strong> {{ market.notes }}</div>
+      </div>
+
+      <div class="cta" style="justify-content:space-between; margin-top:18px;">
+        <a class="chip" href="/">← Back</a>
+        <span class="chip">Trading UI: coming soon</span>
+      </div>
+    </div>
+  </div>
+{% endblock %}

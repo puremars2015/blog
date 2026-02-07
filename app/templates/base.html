@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Wonderland{% endblock %}</title>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.pub/favicon.ico') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <div class="nav">
+    <div class="wrap">
+      <a class="brand" href="/">
+        <span class="brand-badge">🧠</span>
+        <span>Wonderland</span>
+      </a>
+      <div class="navlinks">
+        <a class="chip" href="/">Markets</a>
+      </div>
+    </div>
+  </div>
+
+  {% block content %}{% endblock %}
+
+  <div class="footer">&copy; 2026 Wonderland. Demo only.</div>
+</body>
+</html>

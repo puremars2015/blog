@@ -1,0 +1,110 @@
+:root{
+  --bg:#070b14;
+  --surface:#0f172a;
+  --card:rgba(255,255,255,.06);
+  --border:rgba(255,255,255,.10);
+  --text:#e8edf7;
+  --muted:rgba(232,237,247,.72);
+  --accent:#00d1b2;
+  --yes:#22c55e;
+  --no:#ef4444;
+  --shadow:0 10px 30px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color:var(--text);
+  background:
+    radial-gradient(1200px 700px at 15% 10%, rgba(0,209,178,0.16), transparent 55%),
+    radial-gradient(900px 600px at 85% 20%, rgba(59,130,246,0.12), transparent 55%),
+    linear-gradient(180deg, #070b14, #05070d 80%);
+  min-height:100vh;
+}
+a{color:#9bbcff;text-decoration:none}
+a:hover{color:#c6d7ff}
+
+.nav{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, rgba(15,23,42,.92) 0%, rgba(16,26,46,.92) 60%);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav .wrap{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+.brand{font-weight:900;letter-spacing:.2px;display:flex;align-items:center;gap:10px}
+.brand-badge{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10)}
+.navlinks{display:flex;gap:18px;align-items:center}
+
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+.page-header{
+  padding:56px 20px;
+  text-align:center;
+  background:
+    radial-gradient(900px 300px at 20% 10%, rgba(0,209,178,0.18), transparent 60%),
+    radial-gradient(900px 300px at 80% 20%, rgba(59,130,246,0.16), transparent 60%),
+    linear-gradient(135deg, rgba(15,23,42,.96) 0%, rgba(16,26,46,.96) 100%);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.page-header h1{font-size:2.6rem;margin-bottom:10px}
+.page-header p{font-size:1.1rem;color:var(--muted)}
+
+.toolbar{margin:24px auto 0;max-width:920px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.search{
+  flex:1;min-width:260px;max-width:520px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.14);
+  color:var(--text);
+  padding:12px 14px;border-radius:12px;
+}
+.chip{
+  padding:10px 12px;border-radius:999px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.12);
+  color:var(--text);
+  font-weight:700;font-size:.9rem;
+}
+
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin:26px auto 70px}
+.card{
+  grid-column: span 6;
+  background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+  border:1px solid var(--border);
+  border-radius:16px;
+  box-shadow: var(--shadow);
+  padding:18px;
+  position:relative;
+  overflow:hidden;
+}
+.card:hover{border-color:rgba(0,209,178,.25)}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}
+.card h3{font-size:1.12rem;line-height:1.4}
+.meta{color:var(--muted);font-size:.9rem}
+
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.side{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:14px;
+  padding:12px;
+}
+.side-label{display:flex;align-items:center;justify-content:space-between;gap:10px;font-weight:900}
+.pct{font-variant-numeric: tabular-nums;}
+.bar{height:8px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);overflow:hidden;margin-top:10px}
+.fill{height:100%}
+.fill.yes{background: linear-gradient(90deg, rgba(34,197,94,.95), rgba(34,197,94,.55))}
+.fill.no{background: linear-gradient(90deg, rgba(239,68,68,.95), rgba(239,68,68,.55))}
+
+.cta{display:flex;justify-content:flex-end;margin-top:14px}
+.btn{
+  padding:10px 12px;border-radius:12px;font-weight:900;
+  background: linear-gradient(135deg, rgba(0,209,178,.92), rgba(59,130,246,.35));
+  border:1px solid rgba(255,255,255,.12);
+  color:#041016;
+}
+
+.footer{padding:26px 20px;border-top:1px solid rgba(255,255,255,.08);color:var(--muted);text-align:center}
+
+@media (max-width: 980px){
+  .card{grid-column: 1 / -1}
+  .page-header h1{font-size:2.1rem}
+}
